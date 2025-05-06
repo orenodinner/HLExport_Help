@@ -85,4 +85,4 @@
 | **The app seems frozen.** | Turn the debug log ON to view progress. Processing may slow in Low Power Mode. |
 
 
-[PrivacyPolicy](docs/PrivacyPolicy_ENG.md)
+[PrivacyPolicy](PrivacyPolicy_ENG)

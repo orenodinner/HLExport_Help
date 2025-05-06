@@ -84,4 +84,4 @@
 | **一直显示“正在处理…”** | 另一个任务（转换、复制等）正在进行，完成或取消后再试。 |
 | **应用似乎卡住** | 打开调试日志查看进度；在低电量模式下处理速度可能变慢。 |
 
-[PrivacyPolicy](docs/PrivacyPolicy_CHN.md)
+[PrivacyPolicy](PrivacyPolicy_CHN)
