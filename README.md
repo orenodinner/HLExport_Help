@@ -1,87 +1,85 @@
-# HLExport — 使い方ガイド
-*最終更新: 2025‑05‑06*
+# HLExport — User Guide  
+*Last updated: 2025‑05‑06*
 
 ---
 
-## 0. アクセス許可
-| 準備 | 内容 |
-|------|------|
-| **Health アクセス許可** | アプリ初回起動時に表示されるダイアログですべての読み取りを許可してください。iOS 18 以降で「State of Mind」を記録したい場合は書き込み権限も許可します。 |
-| **通知許可** | ムード入力をリマインドしたい場合は許可してください。後から「設定 > 通知」でも変更できます。 |
+## 0. Permissions
+| Preparation | Details |
+|-------------|---------|
+| **Health access** | When the app first launches, allow all *read* permissions in the dialog that appears. If you want to record **State of Mind** on iOS 18 or later, also allow *write* access. |
+| **Notification access** | Grant permission if you’d like daily reminders for mood entry. You can change this later in **Settings > Notifications**. |
 
 ---
 
-## 1. メイン画面でヘルスデータを取得する
-1. **取得期間を指定**  
-   - *Start Date* / *End Date* に日付を設定します。  
-   - 期間を変更すると自動的に日数が保存され、次回起動時のデフォルトになります。
-2. **ヘルスケアデータを共有する**または**ヘルスケアデータを取得**をタップ  
-   - 進捗バーが表示され、読み込み中はボタンがグレーアウトします。  
-   - キャンセルしたい場合は「 Cancel Data Retrieval 」をタップ。
-3. 取得完了後に行える操作  
-   | ボタン | 動作 |
-   |--------|------|
-   | **JSONデータを共有する** | JSON ファイルを作成し、共有シートを開きます。 |
-   | **JSONデータをクリップボードにコピー** | JSON をクリップボードへ直接コピーします。 |
-   | (各処理中) **中止** 系ボタン | 変換・コピーを途中で中断します。 |
+## 1. Retrieving Health data on the main screen
+1. **Specify a date range**  
+   - Set the *Start Date* and *End Date*.  
+   - Changing the range automatically saves the number of days, which becomes the default next time you launch the app.
+2. Tap **Share Health data (raw)** or **Retrieve Health data**  
+   - A progress bar appears and the button is grayed out while loading.  
+   - To cancel, tap **Cancel Data Retrieval**.
+3. Actions available after data retrieval  
+   | Button | Action |
+   |--------|--------|
+   | **Share JSON data** | Creates a JSON file and opens the share sheet. |
+   | **Copy JSON data to clipboard** | Copies the JSON directly to the clipboard. |
+   | **Cancel** buttons during each process | Interrupts conversion or copy in progress. |
 
-> **ヒント:** 取得データがない状態では共有ボタンは自動で無効になります。
-
----
-
-## 2. 今の気分を記録する
-1. メイン画面の **今の気分を記録する** をタップ  
-2. 7 段階のリストから現在の気分を選び、**記録**  
+> **Tip:** If no data has been retrieved, the share buttons are automatically disabled.
 
 ---
 
-## 3. 日次リマインダーを設定・解除
-### 設定
-1. **設定** 画面 → *毎日の記録リマインダー* セクション  
-2. **通知時刻** で時刻を選択  
-3. **この時刻で通知を設定する** をタップ  
-   - 成功メッセージが表示され、時刻が保存されます。
-
-### 解除
-1. 同じセクションで **通知設定削除** をタップ  
-2. 予約済み通知と保存された時刻がすべて削除されます。
+## 2. Recording your current mood
+1. On the main screen, tap **Record your current mood**.  
+2. Choose your current mood from the 7‑level list and tap **Save**.  
 
 ---
 
-## 4. デフォルト取得期間を変更する
-1. **設定** 画面 → *ヘルスケアデータ取得期間* セクション
-2. テキストフィールドに日数を入力  
-   - 0 未満や 739 374 日 (B.C. 開始相当) 以上を入力すると警告が出て元に戻ります。  
-3. 入力完了後に自動保存され、メイン画面に戻った際の初期値になります。
+## 3. Setting and deleting the daily reminder
+### Set
+1. In **Settings**, open the *Daily Record Reminder* section.  
+2. Select a time under **Notification Time**.  
+3. Tap **Set a notification at this time**.  
+   - A success message appears and the time is saved.
+
+### Delete
+1. In the same section, tap **Delete Notification Setting**.  
+2. All scheduled notifications and the saved time are removed.
 
 ---
 
-## 5. デバッグログを確認する (開発・検証用)
-1. **DEBUG ビルド** でのみ表示されます。  
-2. メイン画面最下部 *デバッグログ* セクション → **デバッグログを表示** を ON  
-3. データ取得や共有操作の内部ログがリアルタイムで表示  
-4. **デバッグログをクリア** で内容をリセット  
-   - ログ大量表示中は処理が遅くなる場合があります。
+## 4. Changing the default retrieval period
+1. In **Settings**, open the *Health data retrieval range* section.  
+2. Enter the number of days in the text field.  
+   - Entering fewer than 0 or more than 739 374 days (equivalent to BCE) triggers a warning and reverts the value.  
+3. The value is saved automatically and becomes the initial range on the main screen.
 
 ---
 
-## 6. よくある質問 (FAQ)
-
-| 質問 | 回答 |
-|------|------|
-| **権限ダイアログを拒否してしまった** | iOS 「設定 > プライバシーとセキュリティ > ヘルスケア > HLExport」で再度許可できます。 |
-| **今の気分を書き込めません と出る** | iOS 18 未満では書き込み API がないため記録できません。 |
-| **大きな期間を選ぶとエラーになる** | iOS が返すサンプル数上限を超える可能性があります。期間を分割して取得してください。 |
-| **JSON 共有後にファイルが消えた** | 共有シートで “保存先アプリ” を選んでいない場合、一時ディレクトリが自動削除されます。再度共有し、Files やクラウドへ保存してください。 |
-| **通知が来ない** | 通知許可と iOS の集中モード設定を確認してください。削除 → 再設定で直る場合があります。 |
+## 5. Viewing the debug log
+1. At the bottom of the main screen, turn **Show Debug Log** ON in the *Debug Log* section.  
+2. Internal logs for data retrieval and sharing appear in real time.  
+3. Tap **Clear Debug Log** to reset the log.  
+   - Displaying many logs can slow processing.
 
 ---
 
-## 7. トラブルシューティング
+## 6. Frequently Asked Questions (FAQ)
 
-| 症状 | 対処 |
-|------|------|
-| **ヘルスケアへのアクセスが許可されていません** | メイン画面に *ヘルスケアへのアクセス許可* ボタンが表示されます。タップして再リクエストしてください。 |
-| **処理中...** | 他の操作 (変換・コピーなど) が進行中です。完了またはキャンセル後に再度実行してください。 |
-| **処理がフリーズしたように見える** | デバッグログを ON にして進捗を確認してください。iOS の省電力モード中は処理が遅くなる場合があります。 |
+| Question | Answer |
+|----------|--------|
+| **I denied the permission dialog by mistake.** | Re‑enable it in **Settings > Privacy & Security > Health > HLExport**. |
+| **I see “Cannot write current mood.”** | Writing State of Mind is not available on iOS versions earlier than 18. |
+| **An error appears when I select a very large date range.** | You may exceed the iOS sample limit. Split the range and retrieve in parts. |
+| **My file disappears after sharing JSON.** | If you don’t pick a destination app in the share sheet, the temporary directory is deleted. Share again and save to Files or a cloud service. |
+| **I’m not receiving notifications.** | Check notification permissions and Focus mode. Deleting and re‑adding the reminder often fixes the issue. |
 
+---
+
+## 7. Troubleshooting
+
+| Symptom | Solution |
+|---------|----------|
+| **“Health access has not been granted.”** | A *Grant access to Health* button appears on the main screen. Tap it to request permissions again. |
+| **“Processing…” alert keeps showing.** | Another task (conversion, copy, etc.) is running. Wait for it to finish or cancel before retrying. |
+| **The app seems frozen.** | Turn the debug log ON to view progress. Processing may slow in Low Power Mode. |
