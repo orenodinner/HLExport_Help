@@ -83,3 +83,6 @@
 | **“Health access has not been granted.”** | A *Grant access to Health* button appears on the main screen. Tap it to request permissions again. |
 | **“Processing…” alert keeps showing.** | Another task (conversion, copy, etc.) is running. Wait for it to finish or cancel before retrying. |
 | **The app seems frozen.** | Turn the debug log ON to view progress. Processing may slow in Low Power Mode. |
+
+
+[PrivacyPolicy](docs/PrivacyPolicy_ENG.md)
