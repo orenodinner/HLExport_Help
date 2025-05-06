@@ -19,11 +19,11 @@
    - A progress bar appears and the button is grayed out while loading.  
    - To cancel, tap **Cancel Data Retrieval**.
 3. Actions available after data retrieval  
-   | Button | Action |
-   |--------|--------|
-   | **Share JSON data** | Creates a JSON file and opens the share sheet. |
-   | **Copy JSON data to clipboard** | Copies the JSON directly to the clipboard. |
-   | **Cancel** buttons during each process | Interrupts conversion or copy in progress. |
+| Button | Action |
+|--------|--------|
+| **Share JSON data** | Creates a JSON file and opens the share sheet. |
+| **Copy JSON data to clipboard** | Copies the JSON directly to the clipboard. |
+| **Cancel** buttons during each process | Interrupts conversion or copy in progress. |
 
 > **Tip:** If no data has been retrieved, the share buttons are automatically disabled.
 
